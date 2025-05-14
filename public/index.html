@@ -26,15 +26,13 @@
       appId: process.env.APP_ID || "1:123456789:web:abc123def456"
     };
     firebase.initializeApp(firebaseConfig);
-  </script>
-    firebase.initializeApp(firebaseConfig);
 
     function signUp() {
       const email = document.getElementById("email").value;
       const password = document.getElementById("password").value;
       firebase.auth().createUserWithEmailAndPassword(email, password)
         .then(() => {
-          window.location.href = "https://your-framer-site.com/members"; // Redirect after signup
+          window.location.href = "https://your-framer-site.com/members";
         })
         .catch(error => {
           alert("Error: " + error.message);
