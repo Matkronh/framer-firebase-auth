@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sign Up</title>
+  <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-auth-compat.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="auth-container">
+    <h1>Join the Course</h1>
+    <input type="email" id="email" placeholder="Email">
+    <input type="password" id="password" placeholder="Password">
+    <button onclick="signUp()">Register</button>
+    <p>Already have an account? <a href="/login.html">Log in</a></p>
+  </div>
+
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyDkhH8vqzSupUJU6KH8PxHFgLT8FauUJ1s",
+      authDomain: "course-project-bbb16.firebaseapp.com",
+      projectId: "course-project-bbb16",
+      storageBucket: "course-project-bbb16.firebasestorage.app",
+      messagingSenderId: "159007839313",
+      appId: "1:159007839313:web:b5c2fb1f2910f2c7db5470",
+    };
+    firebase.initializeApp(firebaseConfig);
+
+    function signUp() {
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+      firebase.auth().createUserWithEmailAndPassword(email, password)
+        .then(() => {
+          window.location.href = "https://YOUR_FRAMER_SITE.com/members"; // Redirect after signup
+        })
+        .catch(error => {
+          alert("Error: " + error.message);
+        });
+    }
+  </script>
+</body>
+</html>
