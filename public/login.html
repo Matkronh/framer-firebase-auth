@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Sign Up</title>
+  <title>Log In</title>
   <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-auth-compat.js"></script>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="auth-container">
-    <h1>Join the Course</h1>
+    <h1>Welcome Back</h1>
     <input type="email" id="email" placeholder="Email">
     <input type="password" id="password" placeholder="Password">
-    <button onclick="signUp()">Register</button>
-    <p>Already have an account? <a href="login.html">Log in</a></p>
+    <button onclick="login()">Log In</button>
+    <p>Need an account? <a href="index.html">Sign up</a></p>
   </div>
 
- <script>
+  <script>
     // Firebase config with Vercel environment variables
     const firebaseConfig = {
       apiKey: process.env.API_KEY || "YOUR_DEFAULT_API_KEY_FOR_DEV",
@@ -26,7 +26,6 @@
       appId: process.env.APP_ID || "1:123456789:web:abc123def456"
     };
     firebase.initializeApp(firebaseConfig);
-  </script>
 
     function login() {
       const email = document.getElementById("email").value;
