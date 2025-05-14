@@ -1,0 +1,12 @@
+{
+  "build": {
+    "env": {
+      "API_KEY": "AIzaSyDkhH8vqzSupUJU6KH8PxHFgLT8FauUJ1s",
+      "AUTH_DOMAIN": "course-project-bbb16.firebaseapp.com",
+      "PROJECT_ID": "course-project-bbb16",
+      "STORAGE_BUCKET": "course-project-bbb16.firebasestorage.app",
+      "MESSAGING_SENDER_ID": "159007839313",
+      "APP_ID": "1:159007839313:web:b5c2fb1f2910f2c7db5470"
+    }
+  }
+}
