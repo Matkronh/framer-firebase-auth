@@ -16,15 +16,17 @@
   </div>
 
   <script>
-    // Firebase config will be injected by Vercel/Netlify
+    // Firebase config with Vercel environment variables
     const firebaseConfig = {
-      apiKey: "%%API_KEY%%",       // Will be replaced automatically
-      authDomain: "%%AUTH_DOMAIN%%",
-      projectId: "%%PROJECT_ID%%",
-      storageBucket: "%%STORAGE_BUCKET%%",
-      messagingSenderId: "%%MESSAGING_SENDER_ID%%",
-      appId: "%%APP_ID%%"
+      apiKey: process.env.API_KEY || "YOUR_DEFAULT_API_KEY_FOR_DEV",
+      authDomain: process.env.AUTH_DOMAIN || "your-app.firebaseapp.com",
+      projectId: process.env.PROJECT_ID || "your-app",
+      storageBucket: process.env.STORAGE_BUCKET || "your-app.appspot.com",
+      messagingSenderId: process.env.MESSAGING_SENDER_ID || "123456789",
+      appId: process.env.APP_ID || "1:123456789:web:abc123def456"
     };
+    firebase.initializeApp(firebaseConfig);
+  </script>
     firebase.initializeApp(firebaseConfig);
 
     function signUp() {
